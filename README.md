@@ -3,6 +3,8 @@
 An offline retro handheld OS for the **Konkr Pocket Advance**, living in the console's bootloader.
 It plays your games straight from the microSD card, and leaves the console's Android in place.
 
+![Home](screenshots/home.png)
+
 ## Systems supported
 
 | System | Emulator | Files |
@@ -82,8 +84,26 @@ screenshots:
 - Box art, play time and last played for every game; search, A to Z and fast scrolling for
   libraries of thousands of games.
 - Games in your own folders, ES-DE or EmuDeck layouts, and `.zip` / `.7z` archives.
+- Tilt, gyro and rumble: the console's motion sensor and vibration motor stand in for the
+  cartridges' (Yoshi Topsy-Turvy, WarioWare: Twisted!, Kirby Tilt 'n' Tumble, Drill Dozer and the
+  Game Boy Color rumble cartridges).
+- Headphones: sound moves to the 3.5 mm jack when they are plugged in.
 - The console's real-time clock for the games that keep time, and menus in 17 languages.
 - Everything (settings, saves, states, box art) lives on the card.
+
+| | |
+|---|---|
+| ![Game library](screenshots/library.png) | ![The in-game menu](screenshots/pico-menu.png) |
+| A system's library, with box art and play time | The in-game menu over a game |
+| ![Settings](screenshots/settings.png) | ![armGBA's options](screenshots/core-options.png) |
+| Settings | armGBA's options, with Motion Controls and Rumble |
+
+## GammaOS Pico Tool
+
+[**GammaOS Pico Tool**](https://github.com/TheGammaSqueeze/GammaOSPico-Tool) is the desktop
+companion for Windows, macOS and Linux: it sets up and updates the card from these releases, lists
+your games the way the console does, scrapes box art straight onto the card, and backs up, updates
+and restores the console's bootloader once GammaOS Pico is installed.
 
 ## Version
 
