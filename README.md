@@ -49,8 +49,10 @@ version:
   fastboot packages, and the stock bootloader to go back.
 - `gammaos-pico-kpa-<version>-sdcard.zip`: the microSD card: the menu, the emulators and a set of
   freely licensed demo games with their box art.
+- `gammaos-pico-kpa-windows-tools.zip`: for installing on Windows, SP Flash Tool v5.1924 and
+  MediaTek's USB driver, as MediaTek ships them (SP Flash Tool V6 does not work with the packages).
 
-**You install the bootloader with SP Flash Tool (Windows) or mtkclient (Linux).** Both write it
+**You install the bootloader with SP Flash Tool v5 (Windows) or mtkclient (Linux).** Both write it
 to a stock console without unlocking anything and without erasing your data. fastboot is only for
 updates once GammaOS Pico is already on the console, never for the first install. Full steps are
 in [Installing](https://github.com/TheGammaSqueeze/GammaOSPico/wiki/Installing).
