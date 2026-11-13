@@ -80,7 +80,9 @@ screenshots:
   a game to save your place and switch off, and the next power on goes straight back.
 - Low latency: the screen is retimed to each console's real refresh rate, frames are paced to the
   panel and run-ahead hides the games' own lag.
-- Rewind, fast forward, save states, screen filters, colour correction and black frame insertion.
+- Sharper motion with black frame insertion: the backlight goes dark for part of every frame, in
+  step with the screen, so moving pictures stay crisp instead of smearing (25 %, 50 % or 75 %).
+- Rewind, fast forward, save states, screen filters and colour correction.
 - Box art, play time and last played for every game; search, A to Z and fast scrolling for
   libraries of thousands of games.
 - Games in your own folders, ES-DE or EmuDeck layouts, and `.zip` / `.7z` archives.
