@@ -103,6 +103,8 @@ screenshots:
 | A system's library, with box art and play time | The in-game menu over a game |
 | ![Settings](screenshots/settings.png) | ![armGBA's options](screenshots/core-options.png) |
 | Settings | armGBA's options, with Motion Controls and Rumble |
+| ![Names in any language](screenshots/names-library.png) | ![Search without accents](screenshots/names-search.png) |
+| Game names in any language | Search finds accented names by their plain letters |
 
 ## GammaOS Pico Tool
 
