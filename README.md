@@ -92,7 +92,9 @@ screenshots:
   cartridges' (Yoshi Topsy-Turvy, WarioWare: Twisted!, Kirby Tilt 'n' Tumble, Drill Dozer and the
   Game Boy Color rumble cartridges).
 - Headphones: sound moves to the 3.5 mm jack when they are plugged in.
-- The console's real-time clock for the games that keep time, and menus in 17 languages.
+- Game names in any language (accented letters, Greek, Cyrillic, Japanese, Chinese, Korean,
+  Hebrew, Arabic), and menus in 17 languages.
+- The console's real-time clock for the games that keep time.
 - Everything (settings, saves, states, box art) lives on the card.
 
 | | |
