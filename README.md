@@ -1,7 +1,8 @@
 # GammaOS Pico
 
-An offline retro handheld OS for the **Konkr Pocket Advance**, living in the console's bootloader.
-It plays your games straight from the microSD card, and leaves the console's Android in place.
+An offline retro handheld OS for the **Konkr Pocket Advance** and the **Konkr Pocket Block**,
+living in the console's bootloader. It plays your games straight from the microSD card, and leaves
+the console's Android in place.
 
 ![Home](screenshots/home.png)
 
@@ -12,20 +13,35 @@ It plays your games straight from the microSD card, and leaves the console's And
 | Game Boy Advance | armGBA (default), gpSP | `.gba` |
 | Game Boy | gambatte | `.gb` |
 | Game Boy Color | gambatte | `.gbc` |
+| NES / Famicom | armNES | `.nes` `.unf` |
+| Famicom Disk System | armNES | `.fds` (needs the Disk System BIOS) |
 | Super Nintendo (SNES) | snes9x | `.sfc` `.smc` |
 | Mega Drive / Genesis | Genesis Plus GX | `.md` `.gen` `.bin` `.smd` |
 | Master System | Genesis Plus GX | `.sms` |
 | Game Gear | Genesis Plus GX | `.gg` |
 | SG-1000 | Genesis Plus GX | `.sg` |
 
-Any of them can also be in a `.zip` or `.7z` archive. Device: the **Konkr Pocket Advance** only.
+Any of them can also be in a `.zip` or `.7z` archive.
+
+## Consoles
+
+| | Konkr Pocket Advance | Konkr Pocket Block |
+|---|---|---|
+| Chip | MediaTek MT6785 | MediaTek MT8786, 960 x 720 screen |
+| Supported since | 1.0.0 | 1.0.2 |
+| Bootloader slots written | `lk_a` and `lk_b` | `lk_a` (the slot the console starts from) |
+| Packages | `gammaos-pico-kpa-*` | `gammaos-pico-block-*` |
+| Tilt, gyro and rumble | yes | not yet |
+
+Both run the same system: the same menus, emulators, saves and settings. **The same microSD card
+works in both consoles**: it holds the menus for both screens.
 
 ## Read this first
 
 > [!CAUTION]
 > **GammaOS Pico is a custom bootloader. It is experimental software, provided as it is, with no
 > warranty of any kind.** Installing it replaces the console's bootloader (the LK, in `lk_a` and
-> `lk_b`). Flashing a bootloader can leave a console that does not start, and you do it entirely at
+> `lk_b` on the Konkr Pocket Advance, in `lk_a` on the Konkr Pocket Block). Flashing a bootloader can leave a console that does not start, and you do it entirely at
 > your own risk. Nobody involved is responsible for a bricked or damaged console, lost data, or
 > anything else that comes from installing or using it.
 
@@ -33,7 +49,9 @@ Any of them can also be in a `.zip` or `.7z` archive. Device: the **Konkr Pocket
 > **The console's Android stays** as it is: pull the card, or pick Boot to Android in the menu,
 > and it starts Android. **But Android's over-the-air (OTA) updates may stop working** while
 > GammaOS Pico's bootloader is installed, and an OTA may also replace it. **Update the console's
-> Android to its latest version before you install GammaOS Pico.**
+> Android to its latest version before you install GammaOS Pico.** On the Konkr Pocket Block an
+> Android update installs into the console's second slot and switches to it, which starts that
+> slot's stock bootloader: install the GammaOS Pico bootloader again after one.
 
 > [!IMPORTANT]
 > **GammaOS Pico is an offline OS, released as it is.** There is no account, no store and no
@@ -43,14 +61,20 @@ Any of them can also be in a `.zip` or `.7z` archive. Device: the **Konkr Pocket
 ## Download
 
 The [**Releases**](https://github.com/TheGammaSqueeze/GammaOSPico/releases) page has, for each
-version:
+version, a set of packages for each console. For 1.0.2:
 
-- `gammaos-pico-kpa-<version>-flash.zip`: the bootloader, with SP Flash Tool, mtkclient and
-  fastboot packages, and the stock bootloader to go back.
-- `gammaos-pico-kpa-<version>-sdcard.zip`: the microSD card: the menu, the emulators and a set of
-  freely licensed demo games with their box art.
-- `gammaos-pico-kpa-windows-tools.zip`: for installing on Windows, SP Flash Tool v5.1924 and
-  MediaTek's USB driver, as MediaTek ships them (SP Flash Tool V6 does not work with the packages).
+| | Konkr Pocket Advance | Konkr Pocket Block |
+|---|---|---|
+| The bootloader | `gammaos-pico-kpa-1.0.2-flash.zip` | `gammaos-pico-block-1.0.2-flash.zip` |
+| The microSD card | `gammaos-pico-kpa-1.0.2-sdcard.zip` | `gammaos-pico-block-1.0.2-sdcard.zip` |
+| Windows tools | `gammaos-pico-kpa-windows-tools.zip` | `gammaos-pico-block-windows-tools.zip` |
+
+- **The flash zip**: the bootloader, with SP Flash Tool, mtkclient and fastboot packages, and the
+  stock bootloader to go back. Use the one for your console: they are not interchangeable.
+- **The sdcard zip**: the microSD card: the menu, the emulators and a set of freely licensed demo
+  games with their box art. Both consoles' sdcard zips hold the same card.
+- **The windows-tools zip**: for installing on Windows, SP Flash Tool v5.1924 and MediaTek's USB
+  driver, as MediaTek ships them (SP Flash Tool V6 does not work with the packages).
 
 **You install the bootloader with SP Flash Tool v5 (Windows) or mtkclient (Linux).** Both write it
 to a stock console without unlocking anything and without erasing your data. fastboot is only for
@@ -68,7 +92,8 @@ screenshots:
 - [Adding games](https://github.com/TheGammaSqueeze/GammaOSPico/wiki/Adding-Games): the folders
   and files it reads, archives, adding folders of your own
 - [Box art](https://github.com/TheGammaSqueeze/GammaOSPico/wiki/Box-Art) and the
-  [Game Boy Advance BIOS](https://github.com/TheGammaSqueeze/GammaOSPico/wiki/BIOS)
+  [BIOS files](https://github.com/TheGammaSqueeze/GammaOSPico/wiki/BIOS) (Game Boy Advance, Famicom
+  Disk System)
 - [Using the menu](https://github.com/TheGammaSqueeze/GammaOSPico/wiki/Using-the-Menu),
   [Settings](https://github.com/TheGammaSqueeze/GammaOSPico/wiki/Settings),
   [the in-game menu](https://github.com/TheGammaSqueeze/GammaOSPico/wiki/In-Game-Menu),
@@ -88,14 +113,16 @@ screenshots:
 - Box art, play time and last played for every game; search, A to Z and fast scrolling for
   libraries of thousands of games.
 - Games in your own folders, ES-DE or EmuDeck layouts, and `.zip` / `.7z` archives.
-- Tilt, gyro and rumble: the console's motion sensor and vibration motor stand in for the
-  cartridges' (Yoshi Topsy-Turvy, WarioWare: Twisted!, Kirby Tilt 'n' Tumble, Drill Dozer and the
+- Tilt, gyro and rumble (Konkr Pocket Advance): the console's motion sensor and vibration motor
+  stand in for the cartridges' (Yoshi Topsy-Turvy, WarioWare: Twisted!, Kirby Tilt 'n' Tumble, Drill Dozer and the
   Game Boy Color rumble cartridges).
 - Headphones: sound moves to the 3.5 mm jack when they are plugged in.
 - Game names in any language (accented letters, Greek, Cyrillic, Japanese, Chinese, Korean,
   Hebrew, Arabic), and menus in 17 languages.
 - The console's real-time clock for the games that keep time.
 - Everything (settings, saves, states, box art) lives on the card.
+
+Screenshots captured on a Konkr Pocket Advance.
 
 | | |
 |---|---|
@@ -111,20 +138,34 @@ screenshots:
 [**GammaOS Pico Tool**](https://github.com/TheGammaSqueeze/GammaOSPico-Tool) is the desktop
 companion for Windows, macOS and Linux: it sets up and updates the card from these releases, lists
 your games the way the console does, scrapes box art straight onto the card, and backs up, updates
-and restores the console's bootloader once GammaOS Pico is installed.
+and restores the console's bootloader once GammaOS Pico is installed. From version 1.0.3 it works
+with both consoles (it writes `lk_a` and `lk_b` on the Konkr Pocket Advance, only `lk_a` on the
+Konkr Pocket Block), and it uses the computer's own certificate store, so checking for the latest
+release and scraping box art work on macOS too.
 
 ## Version
 
 Each build shows its version and the commit it was built from in Settings > About (and over
-fastboot as `version-gammaos-pico`). This is **GammaOS Pico 1.0.0**.
+fastboot as `version-gammaos-pico`). This is **GammaOS Pico 1.0.2**.
+
+New in 1.0.2:
+
+- **The Konkr Pocket Block**, with its own packages (`gammaos-pico-block-*`): the same system and
+  the same microSD card as the Konkr Pocket Advance.
+- **NES, Famicom and Famicom Disk System**, on a new emulator, armNES: `.nes` and `.unf`
+  cartridges and `.fds` Disk System games (which need the Disk System BIOS), with run-ahead,
+  rewind, fast forward and save states.
+- **Zipped games start every time**: a game in a .zip or .7z no longer refuses to start with
+  "This archive is too large to open".
 
 ## Source and licences
 
 The source is at [TheGammaSqueeze/lk-mt6785](https://github.com/TheGammaSqueeze/lk-mt6785)
-(branch `lk-gba-emu-sd-card-kpa`); each emulator core is in its own `-pico` repository, linked
+(branch `lk-gba-emu-sd-card-kpa`, for both consoles); each emulator core is in its own `-pico` repository, linked
 from there and from the card's `licences/` folder. The bootloader and the GammaOS Pico additions
 are MIT; the emulators and the demo games keep their own licences, which ship with the card.
 
-Game Boy, Game Boy Color, Game Boy Advance and Super Nintendo are trademarks of Nintendo; Mega
+Game Boy, Game Boy Color, Game Boy Advance, NES, Famicom, Famicom Disk System and Super Nintendo
+are trademarks of Nintendo; Mega
 Drive, Genesis, Master System, Game Gear and SG-1000 of Sega. GammaOS Pico is not affiliated with
 either, nor with Konkr. No commercial games or BIOS files are included: use your own.
