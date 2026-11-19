@@ -1,7 +1,7 @@
 # GammaOS Pico
 
-An offline retro handheld OS for the **Konkr Pocket Advance** and the **Konkr Pocket Block**,
-living in the console's bootloader. It plays your games straight from the microSD card, and leaves
+A retro handheld OS for the **Konkr Pocket Advance** and the **Konkr Pocket Block**, living in the
+console's bootloader. It plays your games straight from the microSD card, and leaves
 the console's Android in place.
 
 ![Home](screenshots/home.png)
@@ -31,7 +31,8 @@ Any of them can also be in a `.zip` or `.7z` archive.
 | Supported since | 1.0.0 | 1.0.2 |
 | Bootloader slots written | `lk_a` and `lk_b` | `lk_a` (the slot the console starts from) |
 | Packages | `gammaos-pico-kpa-*` | `gammaos-pico-block-*` |
-| Tilt, gyro and rumble | yes | not yet |
+| Tilt, gyro and rumble | yes | yes, from 1.1 |
+| Wi-Fi and Bluetooth | yes, from 1.1 | yes, from 1.1 |
 
 Both run the same system: the same menus, emulators, saves and settings. **The same microSD card
 works in both consoles**: it holds the menus for both screens.
@@ -54,25 +55,27 @@ works in both consoles**: it holds the menus for both screens.
 > slot's stock bootloader: install the GammaOS Pico bootloader again after one.
 
 > [!IMPORTANT]
-> **GammaOS Pico is an offline OS, released as it is.** There is no account, no store and no
-> network. It is not a community project: **feature requests, issues and pull requests are not
+> **GammaOS Pico works fully offline, and is released as it is.** Wi-Fi, Bluetooth and a
+> RetroAchievements account are optional and off until you use them; there is no store and no
+> account of its own. It is not a community project: **feature requests, issues and pull requests are not
 > accepted**, and there is no support channel here. Use it as it is, or not at all.
 
 ## Download
 
 The [**Releases**](https://github.com/TheGammaSqueeze/GammaOSPico/releases) page has, for each
-version, a set of packages for each console. For 1.0.2:
+version, a set of packages for each console. For 1.1.0:
 
 | | Konkr Pocket Advance | Konkr Pocket Block |
 |---|---|---|
-| The bootloader | `gammaos-pico-kpa-1.0.2-flash.zip` | `gammaos-pico-block-1.0.2-flash.zip` |
-| The microSD card | `gammaos-pico-kpa-1.0.2-sdcard.zip` | `gammaos-pico-block-1.0.2-sdcard.zip` |
+| The bootloader | `gammaos-pico-kpa-1.1.0-flash.zip` | `gammaos-pico-block-1.1.0-flash.zip` |
+| The microSD card | `gammaos-pico-kpa-1.1.0-sdcard.zip` | `gammaos-pico-block-1.1.0-sdcard.zip` |
 | Windows tools | `gammaos-pico-kpa-windows-tools.zip` | `gammaos-pico-block-windows-tools.zip` |
 
 - **The flash zip**: the bootloader, with SP Flash Tool, mtkclient and fastboot packages, and the
   stock bootloader to go back. Use the one for your console: they are not interchangeable.
-- **The sdcard zip**: the microSD card: the menu, the emulators and a set of freely licensed demo
-  games with their box art. Both consoles' sdcard zips hold the same card.
+- **The sdcard zip**: the microSD card: the menu, the emulators, the Wi-Fi and Bluetooth firmware
+  and a set of freely licensed demo games with their box art. Both consoles' sdcard zips hold the
+  same card.
 - **The windows-tools zip**: for installing on Windows, SP Flash Tool v5.1924 and MediaTek's USB
   driver, as MediaTek ships them (SP Flash Tool V6 does not work with the packages).
 
@@ -98,6 +101,9 @@ screenshots:
   [Settings](https://github.com/TheGammaSqueeze/GammaOSPico/wiki/Settings),
   [the in-game menu](https://github.com/TheGammaSqueeze/GammaOSPico/wiki/In-Game-Menu),
   [buttons](https://github.com/TheGammaSqueeze/GammaOSPico/wiki/Buttons)
+- [Wi-Fi and the Network tab](https://github.com/TheGammaSqueeze/GammaOSPico/wiki/Wi-Fi),
+  [RetroAchievements](https://github.com/TheGammaSqueeze/GammaOSPico/wiki/RetroAchievements),
+  [playing together over Bluetooth](https://github.com/TheGammaSqueeze/GammaOSPico/wiki/Playing-Together)
 - [Updating, and going back to stock](https://github.com/TheGammaSqueeze/GammaOSPico/wiki/Updating-and-Going-Back)
 - [Troubleshooting and FAQ](https://github.com/TheGammaSqueeze/GammaOSPico/wiki/Troubleshooting-and-FAQ)
 
@@ -113,7 +119,15 @@ screenshots:
 - Box art, play time and last played for every game; search, A to Z and fast scrolling for
   libraries of thousands of games.
 - Games in your own folders, ES-DE or EmuDeck layouts, and `.zip` / `.7z` archives.
-- Tilt, gyro and rumble (Konkr Pocket Advance): the console's motion sensor and vibration motor
+- Wi-Fi: a Network tab to join networks (WPA2 and open, 2.4 and 5 GHz) with an on-screen
+  keyboard, saved networks that join by themselves, and the clock set from the network.
+- RetroAchievements on every system (softcore), with unlocks kept on the card when there is no
+  network and sent later, an Achievements page in the in-game menu and cards over the game.
+- Box art from the network: libretro's thumbnails matched by each game's contents (zipped games
+  too), then ScreenScraper for the rest.
+- Two consoles together over Bluetooth: Play together (NES, SNES, Mega Drive, Master System,
+  Game Gear, and linked Game Boy, Game Boy Color and Game Boy Advance games), Send and Receive.
+- Tilt, gyro and rumble (both consoles): the console's motion sensor and vibration motor
   stand in for the cartridges' (Yoshi Topsy-Turvy, WarioWare: Twisted!, Kirby Tilt 'n' Tumble, Drill Dozer and the
   Game Boy Color rumble cartridges).
 - Headphones: sound moves to the 3.5 mm jack when they are plugged in.
@@ -132,6 +146,12 @@ Screenshots captured on a Konkr Pocket Advance.
 | Settings | armGBA's options, with Motion Controls and Rumble |
 | ![Names in any language](screenshots/names-library.png) | ![Search without accents](screenshots/names-search.png) |
 | Game names in any language | Search finds accented names by their plain letters |
+| ![Wi-Fi](screenshots/network-wifi.png) | ![RetroAchievements](screenshots/ra-igm-achievements.png) |
+| Wi-Fi on the Network tab | A game's achievements in the in-game menu |
+| ![Box art from the network](screenshots/boxart-done.png) | ![Play together](screenshots/link-game.png) |
+| Box art from the network | Play together over Bluetooth |
+| ![Classic theme](screenshots/classic-home.png) | ![The Classic in-game menu](screenshots/classic-igm.png) |
+| The Classic theme, Link first in its menubar | The Classic themes' own in-game menu |
 
 ## GammaOS Pico Tool
 
@@ -146,7 +166,20 @@ release and scraping box art work on macOS too.
 ## Version
 
 Each build shows its version and the commit it was built from in Settings > About (and over
-fastboot as `version-gammaos-pico`). This is **GammaOS Pico 1.0.2**.
+fastboot as `version-gammaos-pico`). This is **GammaOS Pico 1.1.0**.
+
+New in 1.1.0:
+
+- **Wi-Fi**, on a new **Network** tab (System > Network in the Classic themes): the networks
+  around you, the on-screen keyboard for passwords, saved networks that join by themselves.
+- **RetroAchievements** on every system, softcore, with unlocks kept on the card while there is
+  no network, an Achievements page in the in-game menu and cards over the game.
+- **Box art from the network**, found by each game's contents, zipped games included.
+- **Play together over Bluetooth**: lockstep netplay and linked Game Boys and Game Boy Advances
+  between two consoles, and Send / Receive for the games you own.
+- **Each emulator's own options** in the in-game menu, and the **Classic themes' own in-game
+  menu**, menubar (Link first) and Suspend Point List.
+- **Tilt, gyro and rumble on the Konkr Pocket Block.**
 
 New in 1.0.2:
 
