@@ -63,12 +63,12 @@ works in both consoles**: it holds the menus for both screens.
 ## Download
 
 The [**Releases**](https://github.com/TheGammaSqueeze/GammaOSPico/releases) page has, for each
-version, a set of packages for each console. For 1.1.0:
+version, a set of packages for each console. For 1.1.2:
 
 | | Konkr Pocket Advance | Konkr Pocket Block |
 |---|---|---|
-| The bootloader | `gammaos-pico-kpa-1.1.0-flash.zip` | `gammaos-pico-block-1.1.0-flash.zip` |
-| The microSD card | `gammaos-pico-kpa-1.1.0-sdcard.zip` | `gammaos-pico-block-1.1.0-sdcard.zip` |
+| The bootloader | `gammaos-pico-kpa-1.1.2-flash.zip` | `gammaos-pico-block-1.1.2-flash.zip` |
+| The microSD card | `gammaos-pico-kpa-1.1.2-sdcard.zip` | `gammaos-pico-block-1.1.2-sdcard.zip` |
 | Windows tools | `gammaos-pico-kpa-windows-tools.zip` | `gammaos-pico-block-windows-tools.zip` |
 
 - **The flash zip**: the bootloader, with SP Flash Tool, mtkclient and fastboot packages, and the
@@ -115,7 +115,8 @@ screenshots:
   panel and run-ahead hides the games' own lag.
 - Sharper motion with black frame insertion: the backlight goes dark for part of every frame, in
   step with the screen, so moving pictures stay crisp instead of smearing (25 %, 50 % or 75 %).
-- Rewind, fast forward, save states, screen filters and colour correction.
+- Rewind, fast forward (with a speed cap of your choice), save states, screen filters and colour
+  correction, cheats, and every button and hotkey remappable.
 - Box art, play time and last played for every game; search, A to Z and fast scrolling for
   libraries of thousands of games.
 - Games in your own folders, ES-DE or EmuDeck layouts, and `.zip` / `.7z` archives.
@@ -126,7 +127,8 @@ screenshots:
 - Box art from the network: libretro's thumbnails matched by each game's contents (zipped games
   too), then ScreenScraper for the rest.
 - Two consoles together over Bluetooth: Play together (NES, SNES, Mega Drive, Master System,
-  Game Gear, and linked Game Boy, Game Boy Color and Game Boy Advance games), Send and Receive.
+  Game Gear, and linked Game Boy, Game Boy Color and Game Boy Advance games, one copy of each game
+  enough), started from the menu or from inside a game, and Send and Receive.
 - Tilt, gyro and rumble (both consoles): the console's motion sensor and vibration motor
   stand in for the cartridges' (Yoshi Topsy-Turvy, WarioWare: Twisted!, Kirby Tilt 'n' Tumble, Drill Dozer and the
   Game Boy Color rumble cartridges).
@@ -152,6 +154,8 @@ Screenshots captured on a Konkr Pocket Advance.
 | Box art from the network | Play together over Bluetooth |
 | ![Classic theme](screenshots/classic-home.png) | ![The Classic in-game menu](screenshots/classic-igm.png) |
 | The Classic theme, Link first in its menubar | The Classic themes' own in-game menu |
+| ![Netplay from inside a game](screenshots/igm-netplay-session.png) | ![Fast Forward Speed](screenshots/pico-menu-gameplay-ff.png) |
+| Netplay from inside a game: a session with a Konkr Pocket Block | Fast Forward Speed on the Gameplay page |
 
 ## GammaOS Pico Tool
 
@@ -166,7 +170,24 @@ release and scraping box art work on macOS too.
 ## Version
 
 Each build shows its version and the commit it was built from in Settings > About (and over
-fastboot as `version-gammaos-pico`). This is **GammaOS Pico 1.1.0**.
+fastboot as `version-gammaos-pico`). This is **GammaOS Pico 1.1.2**.
+
+New in 1.1.2:
+
+- **Faster fast forward**, in battles above all (a Pokemon LeafGreen battle about 4 to 5 times
+  instead of 2), and a **Fast Forward Speed** cap from 2x to 10x, or Unlimited.
+- **Rewind while L2 is held.**
+- **Netplay from inside a game** (Game Boy, Game Boy Color, Game Boy Advance): host, join and leave
+  a session from the in-game menu, where the game stands.
+- **One copy of each game is enough to link** two different games (Pokemon Red and Green): each
+  console needs only the game it plays.
+- **armGBA 2.0.**
+
+New in 1.1.1:
+
+- **Cheats for every system**, from RetroArch's cheat database or your own `.cht` files.
+- **armSNES**, a second SNES core, beside snes9x.
+- **Every button and hotkey remappable**, for every system, with the console's spare buttons.
 
 New in 1.1.0:
 
