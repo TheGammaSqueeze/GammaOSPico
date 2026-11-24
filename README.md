@@ -178,7 +178,8 @@ New in 1.1.2:
   instead of 2), and a **Fast Forward Speed** cap from 2x to 10x, or Unlimited.
 - **Rewind while L2 is held.**
 - **Netplay from inside a game** (Game Boy, Game Boy Color, Game Boy Advance): host, join and leave
-  a session from the in-game menu, where the game stands.
+  a session from the in-game menu, where the game stands. Joining is near instant (a Game Boy Advance
+  start well under a second instead of about 15).
 - **One copy of each game is enough to link** two different games (Pokemon Red and Green): each
   console needs only the game it plays.
 - **armGBA 2.0.**
