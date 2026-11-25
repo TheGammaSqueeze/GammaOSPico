@@ -63,12 +63,12 @@ works in both consoles**: it holds the menus for both screens.
 ## Download
 
 The [**Releases**](https://github.com/TheGammaSqueeze/GammaOSPico/releases) page has, for each
-version, a set of packages for each console. For 1.1.2:
+version, a set of packages for each console. For 1.2.0:
 
 | | Konkr Pocket Advance | Konkr Pocket Block |
 |---|---|---|
-| The bootloader | `gammaos-pico-kpa-1.1.2-flash.zip` | `gammaos-pico-block-1.1.2-flash.zip` |
-| The microSD card | `gammaos-pico-kpa-1.1.2-sdcard.zip` | `gammaos-pico-block-1.1.2-sdcard.zip` |
+| The bootloader | `gammaos-pico-kpa-1.2.0-flash.zip` | `gammaos-pico-block-1.2.0-flash.zip` |
+| The microSD card | `gammaos-pico-kpa-1.2.0-sdcard.zip` | `gammaos-pico-block-1.2.0-sdcard.zip` |
 | Windows tools | `gammaos-pico-kpa-windows-tools.zip` | `gammaos-pico-block-windows-tools.zip` |
 
 - **The flash zip**: the bootloader, with SP Flash Tool, mtkclient and fastboot packages, and the
@@ -115,8 +115,8 @@ screenshots:
   panel and run-ahead hides the games' own lag.
 - Sharper motion with black frame insertion: the backlight goes dark for part of every frame, in
   step with the screen, so moving pictures stay crisp instead of smearing (25 %, 50 % or 75 %).
-- Rewind, fast forward (with a speed cap of your choice), save states, screen filters and colour
-  correction, cheats, and every button and hotkey remappable.
+- Rewind, fast forward (with a speed cap of your choice), save states, screen filters (on the game's pixels or the
+  screen's), integer scaling, any aspect ratio, colour correction, cheats, and every button and hotkey remappable.
 - Box art, play time and last played for every game; search, A to Z and fast scrolling for
   libraries of thousands of games.
 - Games in your own folders, ES-DE or EmuDeck layouts, and `.zip` / `.7z` archives.
@@ -170,7 +170,22 @@ release and scraping box art work on macOS too.
 ## Version
 
 Each build shows its version and the commit it was built from in Settings > About (and over
-fastboot as `version-gammaos-pico`). This is **GammaOS Pico 1.1.2**.
+fastboot as `version-gammaos-pico`). This is **GammaOS Pico 1.2.0**.
+
+New in 1.2.0:
+
+- **More aspect ratios and a custom one**, **Integer Scale** (with Overscale) and **Filter
+  Alignment**, which lays scanlines and the LCD filters on the screen's own pixels so they stay
+  even at any scale. For every system.
+- **Big Core** (optional, needs the multi-core firmware patch from the source tree): a game's
+  emulation on one of the console's big CPU cores.
+- **armSNES 1.1 and armNES 1.5.**
+
+| | |
+|---|---|
+| ![Display page](screenshots/igm-display-scale.png) | ![Big Core](screenshots/igm-big-core.png) |
+| ![Filter on the game's pixels](screenshots/filter-game-pixels.png) | ![Filter on the screen's pixels](screenshots/filter-screen-pixels.png) |
+| Scanlines on the game's pixels at 2.67x | The same on the screen's pixels |
 
 New in 1.1.2:
 
