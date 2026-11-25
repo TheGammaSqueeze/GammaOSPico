@@ -42,7 +42,8 @@ works in both consoles**: it holds the menus for both screens.
 > [!CAUTION]
 > **GammaOS Pico is a custom bootloader. It is experimental software, provided as it is, with no
 > warranty of any kind.** Installing it replaces the console's bootloader (the LK, in `lk_a` and
-> `lk_b` on the Konkr Pocket Advance, in `lk_a` on the Konkr Pocket Block). Flashing a bootloader can leave a console that does not start, and you do it entirely at
+> `lk_b`) and, since 1.2.0, its secure
+> firmware (the tee, in `tee_a` and `tee_b`: the stock one with one instruction changed). Flashing either can leave a console that does not start, and you do it entirely at
 > your own risk. Nobody involved is responsible for a bricked or damaged console, lost data, or
 > anything else that comes from installing or using it.
 
@@ -71,8 +72,8 @@ version, a set of packages for each console. For 1.2.0:
 | The microSD card | `gammaos-pico-kpa-1.2.0-sdcard.zip` | `gammaos-pico-block-1.2.0-sdcard.zip` |
 | Windows tools | `gammaos-pico-kpa-windows-tools.zip` | `gammaos-pico-block-windows-tools.zip` |
 
-- **The flash zip**: the bootloader, with SP Flash Tool, mtkclient and fastboot packages, and the
-  stock bootloader to go back. Use the one for your console: they are not interchangeable.
+- **The flash zip**: the bootloader and the secure firmware, with SP Flash Tool, mtkclient and
+  fastboot packages, and the stock ones to go back. Use the one for your console: they are not interchangeable.
 - **The sdcard zip**: the microSD card: the menu, the emulators, the Wi-Fi and Bluetooth firmware
   and a set of freely licensed demo games with their box art. Both consoles' sdcard zips hold the
   same card.
@@ -177,8 +178,9 @@ New in 1.2.0:
 - **More aspect ratios and a custom one**, **Integer Scale** (with Overscale) and **Filter
   Alignment**, which lays scanlines and the LCD filters on the screen's own pixels so they stay
   even at any scale. For every system.
-- **Big Core** (optional, needs the multi-core firmware patch from the source tree): a game's
-  emulation on one of the console's big CPU cores.
+- **Big Core**: a game's emulation on one of the console's big CPU cores (off by default). For it
+  the release now also writes the console's secure firmware, the stock one with one instruction
+  changed.
 - **armSNES 1.1 and armNES 1.5.**
 
 | | |
